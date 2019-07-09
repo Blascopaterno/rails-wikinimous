@@ -1,0 +1,12 @@
+<% @articles.each do |art|%>
+<div class="container">
+
+  <%= link_to art.title, article_path(art) %>
+
+  <div id="destroy">
+    <%= link_to "DESTROY", article_path(art), method: :delete,
+    data: { confirm: 'Are you sure you want to delete the article' } %>
+  </div>
+</div>
+<% end %>
+<%= link_to 'Add a new article', new_article_path %>
